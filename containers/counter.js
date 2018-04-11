@@ -2,20 +2,16 @@ import { connect } from 'react-redux'
 import { increase, decrease } from '../redux/action';
 import Counter from '../components/counter'
 
-const mapStateToProps = state => {
-  return {
-    count: state.count
-  };
+const mapStateToProps = state => ({
+    counter: state.counter
+})
+
+const mapDispatchToProps = {
+    onIncrement: increase,
+    onDecrease: decrease
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onIncrement: () => dispatch(increase()),
-    onDecrease: () => dispatch(decrease())
-  }
-}
-
-export default connect(
+export default connect( 
   mapStateToProps, 
   mapDispatchToProps
-)(Counter);
+)(Counter); 

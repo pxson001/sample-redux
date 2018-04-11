@@ -8,15 +8,18 @@ export default class Counter extends React.Component {
 
   constructor(props) {
     super(props);
+
+    console.log(this.props);
   }
 
   render() {
-    const {count, onIncrement, onDecrease} = this.props
+    const {counter, onIncrement, onDecrease} = this.props
 
-    console.log('count : ' + count);
+    console.log('count : ' + counter);
+
     return (
       <View style={styles.container}>
-        <Text>{count}</Text>
+        <Text>{counter.count}</Text>
         <Button onPress={onIncrement} title="Increase"></Button>
         <Button onPress={onDecrease} title="Decrease"></Button>
       </View>
