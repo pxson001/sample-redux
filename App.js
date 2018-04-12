@@ -6,9 +6,10 @@ import rootReducer from './redux/index';
 import { createStore } from 'redux';
 
 const store = createStore(rootReducer)
-
+export { store }
 
 export default class App extends React.Component {
+ 
   render() {
     return (
       <Provider store={store}>

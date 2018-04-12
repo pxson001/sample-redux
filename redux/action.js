@@ -5,3 +5,7 @@ export const increase = () => ({
 export const decrease = () => ({
     type: 'DECREASE'
 });
+
+export const double = () => ({
+    type: 'DOUBLE'
+});

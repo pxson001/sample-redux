@@ -14,6 +14,12 @@ export default function counter(state = {count : 0} , action = {}) {
         ...state,
         count: state.count - 1
       }
+    case 'DOUBLE' : 
+      console.log('Action DOUBLe');
+      return {
+        ...state,
+        count: state.count * 2
+      }
   }
   
   return state;
