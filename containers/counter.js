@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import * as CounterActions from '../redux/action';
+import * as CounterActions from '../redux/counter/action';
 import Counter from '../components/counter'
 
 const mapStateToProps = state => ({

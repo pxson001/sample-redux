@@ -1,20 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import Counter from './containers/counter';
+import News from './containers/news';
 import { Provider } from 'react-redux';
-import rootReducer from './redux/index';
-import { createStore } from 'redux';
+import storeManager from './store/index';
 
-const store = createStore(rootReducer)
-export { store }
+const store = storeManager()
 
 export default class App extends React.Component {
- 
   render() {
     return (
       <Provider store={store}>
         <View style={styles.container}>
-          <Counter />
+          <News />
         </View>
       </Provider>
     );

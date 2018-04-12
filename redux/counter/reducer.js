@@ -1,4 +1,3 @@
-
 export default function counter(state = {count : 0} , action = {}) {
   console.log(state);
   switch (action.type) {
