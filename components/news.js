@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { StyleSheet, Text, View, Button, ListView, ActivityIndicator, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { store } from '../App';
+import NewsRow from '../views/news/row'
 
 
 export default class News extends React.Component {
@@ -29,19 +30,15 @@ export default class News extends React.Component {
     const { dataSource } = this.state
     const {isFetching, posts, onFetch} = this.props
 
+    console.log(posts)
+
     return (
       <View style={styles.container}>
         <ActivityIndicator style={isFetching ? styles.indicator : styles.hidden} size="large" color="#0000ff" />
         <ListView
           style={styles.listview}
           dataSource={dataSource}
-          renderRow={(rowData) => {
-            return (
-              <View style={styles.cell}>
-                <Text>{rowData.title}</Text>
-              </View>
-            )
-          }}
+          renderRow={(rowData) => <NewsRow {...rowData} />}
         />
         <Button onPress={onFetch} title="Fetch News"></Button>
       </View>

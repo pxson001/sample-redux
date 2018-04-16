@@ -9,7 +9,6 @@ export default function news(state = { isFetching: false, posts: []}, action) {
       })
     case NewsActionConstants.FETCH_NEWS_SUCCESS:
       console.log('load request success')
-      console.log(action.posts)
       return Object.assign({}, state, {
         isFetching : false,
         posts : action.posts

@@ -22,9 +22,9 @@ export const fetchRequestFailure = (message) => ({
 export const fetchNews = () => (dispatch, getState) => {
   dispatch(fetchRequest())
 
-  axios.get('https://jsonplaceholder.typicode.com/posts')
+  axios.get('https://jsonplaceholder.typicode.com/photos')
        .then(response => response.data)
        .then((posts) => {
-          dispatch(fetchRequestSuccess(posts))
+          dispatch(fetchRequestSuccess(posts.slice(1,100)))
        })
 }
